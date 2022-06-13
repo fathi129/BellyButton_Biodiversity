@@ -78,6 +78,7 @@ function buildCharts(sample) {
     var barData = [{
       x : sample_values.slice(0,10).reverse(),
       text:otu_labels.slice(0,10).reverse(),
+      
       type:"bar",
       orientation:'h',
       marker: {
@@ -86,12 +87,29 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "<b>Top 10 Bacteria Cultures Found</b>",
+      title: {
+        text:"<b>Top 10 Bacteria Cultures Found</b>",
+        font: {
+          size: 18,
+          color: 'rgb(34,94,168)'
+                    }
+                  },
+
       yaxis: {
         tickmode: "array",
         tickvals: [0,1,2,3,4,5,6,7,8,9],
-        ticktext: yticks
+        ticktext: yticks,
+        tickfont: { size: 14,
+        color:'rgb(34,94,168)'}
       },
+
+    xaxis: {
+       font: {
+        color: 'rgb(34,94,168)',
+        size: 12
+      }
+        
+     },
       annotations: [{
         xref: 'paper',
         yref: 'paper',
@@ -100,6 +118,10 @@ function buildCharts(sample) {
         y: -0.25,
         yanchor: 'center',
         text: 'The bar chart displays the top 10 bacterial species (OTUs)<br>with the number of samples found in the belly button',
+        font: {
+          color: 'rgb(34,94,168)',
+          size: 12
+        },
         showarrow: false
       }]
     };
@@ -123,6 +145,10 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: '<b>Bacteria Cultures Per Sample</b>',
+      font: {
+        color: 'rgb(34,94,168)',
+        size: 14
+      },
       showlegend: false,
       xaxis: {title: "OTU ID", automargin: true},
       yaxis: {automargin: true},
@@ -148,7 +174,13 @@ function buildCharts(sample) {
    {
      domain: { x: [0, 1], y: [0, 1] },
      value: washFreq,
-     title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per week"},
+     title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per week",
+     font: {
+      color: 'rgb(34,94,168)',
+      size: 18
+    }
+  },
+     
      type: "indicator",
      mode: "gauge+number",
      gauge: {
@@ -180,7 +212,14 @@ function buildCharts(sample) {
      y: 0,
      yanchor: 'center',
      text: "<br>The gauge displays your belly button weekly washing frequency",
-     showarrow: false
+     font: {
+      color: 'rgb(34,94,168)',
+      size: 12
+    },
+     showarrow: false,
+    textinfo: washFreq,
+    textposition: "inside",
+     hoverinfo: "washFreq"
    }]
  };
 
