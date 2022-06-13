@@ -90,7 +90,7 @@ function buildCharts(sample) {
       title: {
         text:"<b>Top 10 Bacteria Cultures Found</b>",
         font: {
-          size: 18,
+          size: 20,
           color: 'rgb(34,94,168)'
                     }
                   },
@@ -120,7 +120,7 @@ function buildCharts(sample) {
         text: 'The bar chart displays the top 10 bacterial species (OTUs)<br>with the number of samples found in the belly button',
         font: {
           color: 'rgb(34,94,168)',
-          size: 12
+          size: 14
         },
         showarrow: false
       }]
@@ -147,7 +147,7 @@ function buildCharts(sample) {
       title: '<b>Bacteria Cultures Per Sample</b>',
       font: {
         color: 'rgb(34,94,168)',
-        size: 14
+        size: 16
       },
       showlegend: false,
       xaxis: {title: "OTU ID", automargin: true},
@@ -177,7 +177,7 @@ function buildCharts(sample) {
      title: { text: "<b>Belly Button Washing Frequency</b><br>Scrubs per week",
      font: {
       color: 'rgb(34,94,168)',
-      size: 18
+      size: 20
     }
   },
      
